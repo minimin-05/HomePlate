@@ -1,6 +1,6 @@
 # Home Plate
 
-![image](./HomePalte.png)
+![image](HomePlate.png)
 
 ###### NO. 22421628
 ###### NAME. 장세민

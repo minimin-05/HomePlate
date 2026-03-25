@@ -1,7 +1,8 @@
 # Home Plate
 
-![image](HomePlate.png)
 <img src="https://github.com/user-attachments/assets/e679c4fc-b2b8-40e3-a1d5-98cb90c1324a" width="70%">
+
+
 ###### NO. 22421628
 ###### NAME. 장세민
 ###### email. 22421628@yu.ac.kr  

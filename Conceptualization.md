@@ -11,7 +11,7 @@
 - - -
 
 ## [ Revision history ]
-| Reversion date | Version # | Description | Autor
+| Reversion date | Version # | Description | Autor|
 |-----|-----|-----|-----|
 |03/26/2026|1.0.0|First Writing||  
 
@@ -48,7 +48,7 @@
 1) 회원가입
 |Actor|User, Administrator, DB server|
 |------|-----|
-|Description| 사용자가 회원가입을 요청하면 자신을 정보를 저장하고, 그 정보를 데이터베이스에 저장한다|  
+|Description|사용자가 회원가입을 요청하면 자신을 정보를 저장하고, 그 정보를 데이터베이스에 저장한다|  
 
 3) 로그인
 |Actor|User, Administrator, DB server|
@@ -85,7 +85,7 @@
 |Purpose|등록되지 않은 사용자일 경우 새로운 계정을 생성|
 |------|-----|
 |Approach|사용자에게 아이디와 비밀번호를 입력받고 중복되지 않는 아이디일 경우 서버에 저장한다|
-|------|-----|
+|------|---------|
 |Dynamics| 로그인을 위해 회원가입할 경우|
 |------|-----|
 |Goals|회원가입 기능 구현|

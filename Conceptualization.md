@@ -37,7 +37,7 @@
 
 ## 2. System context diagram
 
-<src img="https://github.com/user-attachments/assets/c9401347-8082-45b9-a758-e7276869b3d5" width="70%">
+<img src="https://github.com/user-attachments/assets/c9401347-8082-45b9-a758-e7276869b3d5" width="70%">
 
 
 - - -

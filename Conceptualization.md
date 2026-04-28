@@ -45,7 +45,7 @@
 1) 회원가입
 
 
-| Actor | User, Administrator |
+| Actor | User |
 |------|-----|
 | Description | 사용자가 회원가입을 요청하면 자신을 정보를 저장하고, 그 정보를 데이터베이스에 저장한다 |  
 

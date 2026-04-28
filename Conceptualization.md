@@ -14,7 +14,7 @@
 | Reversion date | Version # | Description | Autor
 |-----|-----|-----|-----|
 |03/26/2026|1.0.0|First Writing||  
-|04/28/2026|1.1.0|Business purpose modify|
+|04/28/2026|2.0.0|Business purpose, use case list modify|
 
 
 - - -
@@ -44,6 +44,7 @@
 
 1) 회원가입
 
+
 | Actor | User, Administrator |
 |------|-----|
 | Description | 사용자가 회원가입을 요청하면 자신을 정보를 저장하고, 그 정보를 데이터베이스에 저장한다 |  
@@ -55,28 +56,49 @@
 |------|-----|
 |Description| 사용자가 로그인하면 데이터베이스와 비교하고 있는 정보일 경우 로그인을 승인한다 |
 
-3) 일기 작성
+3) 회원관리
 
 
-|Actor|User, 스포츠 API|
+|Actor|Administrator|
+|------|-----|
+|Description| 유저들을 관리한다 |
+
+4) 일기 작성
+
+
+|Actor|Use|
 |------|-----|
 |Description| 사용자가 일기 작성을 요청하면 API를 통해 오늘 경기 일정을 가져오고 사용자가 경기를 선택하면 해당 경기의 레코드를 읽어와 일기에 추가한다. 이후 사용자가 작성을 완료하면 데이터베이스에 일기를 저장한다. |
 
-4) 일기 조회
+5) 데이터 수집
+
+
+|Actor|스포츠 API|
+|------|-----|
+|Description| API를 통해 오늘 경기 일정을 가져와 해당 경기들과 관련된 정보를 가공해 서버에 저장한다|
+
+6) 데이터 불러오기
+
+
+|Actor|User|
+|------|-----|
+|Description| 사용자가 선택한 일정의 경기 정보를 가져와 다이어리 템플릿에 추가한다 |
+
+7) 일기 조회
 
 
 |Actor|User|
 |------|-----|
 |Description| 사용자가 조회할 일기의 정보를 요청하면 데이터베이스에서 저장된 일기를 불러와 사용자에게 보여준다. |
 
-5) 일기 삭제
+8) 일기 삭제
 
 
 |Actor|User|
 |------|-----|
 |Description| 사용자가 일기를 삭제한다. |
 
-6) 로그아웃
+9) 로그아웃
 
 
 |Actor|User, Administrator|

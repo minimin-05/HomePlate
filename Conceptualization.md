@@ -44,35 +44,35 @@
 
 1) 회원가입
 
-| Actor | User, Administrator, DB server |
+| Actor | User, Administrator |
 |------|-----|
 | Description | 사용자가 회원가입을 요청하면 자신을 정보를 저장하고, 그 정보를 데이터베이스에 저장한다 |  
 
 2) 로그인
 
 
-|Actor|User, Administrator, DB server|
+|Actor|User, Administrator|
 |------|-----|
 |Description| 사용자가 로그인하면 데이터베이스와 비교하고 있는 정보일 경우 로그인을 승인한다 |
 
 3) 일기 작성
 
 
-|Actor|User, 스포츠 API, DB server|
+|Actor|User, 스포츠 API|
 |------|-----|
 |Description| 사용자가 일기 작성을 요청하면 API를 통해 오늘 경기 일정을 가져오고 사용자가 경기를 선택하면 해당 경기의 레코드를 읽어와 일기에 추가한다. 이후 사용자가 작성을 완료하면 데이터베이스에 일기를 저장한다. |
 
 4) 일기 조회
 
 
-|Actor|User, DB server|
+|Actor|User|
 |------|-----|
 |Description| 사용자가 조회할 일기의 정보를 요청하면 데이터베이스에서 저장된 일기를 불러와 사용자에게 보여준다. |
 
 5) 일기 삭제
 
 
-|Actor|User, DB server|
+|Actor|User|
 |------|-----|
 |Description| 사용자가 일기를 삭제한다. |
 

@@ -106,6 +106,13 @@
 |Description| 사용자가 로그아웃한다 |
 
 
+10) 로그아웃
+
+
+|Actor|User|
+|------|-----|
+|Description| 일기에 사진을 추가한다. |
+
 - - -
 
 ## 3. Concept of operation

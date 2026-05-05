@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="HomePlate.png" width="80%">
+<img src="./images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628

@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="https://github.com/user-attachments/assets/e679c4fc-b2b8-40e3-a1d5-98cb90c1324a" width="70%">
+<img src="./images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628
@@ -34,7 +34,7 @@
 
 ## 2. System context diagram
 
-<img src="https://github.com/user-attachments/assets/c9401347-8082-45b9-a758-e7276869b3d5" width="70%">
+<img src="./images/SystemContextDiagram.jpg" width="90%">
 
 
 - - -

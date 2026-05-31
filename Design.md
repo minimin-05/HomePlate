@@ -13,7 +13,8 @@
 ## [ Revision history ]
 | Reversion date | Version # | Description | Autor
 |-----|-----|-----|-----|
-|05/27/2026|1.0.0|First Writing||  
+|05/27/2026|1.0.0|First Writing||
+|05/31/2026|1.0.1|add glossary, Reference| 
 
 
 - - -
@@ -175,3 +176,7 @@ LoggedIn 상태에서 사용자가 직접 로그아웃(handleLogout()) 하거나
 
 - (Supabase) Auth: 사용자 회원가입, 로그인, 로그아웃 및 세션 토큰 발급 등 전반적인 사용자 인증 관리를 제공하는 Supabase의 내장 보안 서비스
 - RLS (Row Level Security): 데이터베이스 테이블의 행(Row) 단위로 읽기/쓰기/삭제 접근 권한을 제어하는 보안 정책. 본인(User)이 작성한 야구 일기만 제어할 수 있도록 강제할 때 사용된다.
+
+- - -
+
+## Reference

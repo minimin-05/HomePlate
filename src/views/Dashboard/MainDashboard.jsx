@@ -13,14 +13,35 @@ export default function MainDashboard({ onLogout }) {
   const [isAdmin, setIsAdmin] = useState(false); 
   const [isAdminOpen, setIsAdminOpen] = useState(false); 
 
-  // 관리자 권한 체크 함수
-  const checkUser = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    console.log("🔥 현재 로그인한 유저의 역할:", user?.user_metadata?.role); 
-    if (user?.user_metadata?.role === 'admin') {
+// profiles 테이블의 실시간 데이터를 조회
+const checkUser = async () => {
+  // 1. 현재 로그인한 유저의 기본 auth 정보(id)를 가져옵니다.
+  const { data: { user } } = await supabase.auth.getUser();
+  
+  if (!user) return; // 로그인 세션이 없으면 튕겨내기
+
+  try {
+    // 데이터베이스의 public.profiles 테이블 조회
+    const { data: profileData, error } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single(); // 데이터 1줄만 쏙 뽑아오기
+
+    if (error) throw error;
+
+    console.log("🔥 현재 로그인한 유저의 진짜 역할:", profileData?.role); 
+
+    // 3. 역할이 정확히 admin인지 판별해서 마스터 키 부여!
+    if (profileData?.role === 'admin') {
       setIsAdmin(true); 
+    } else {
+      setIsAdmin(false);
     }
-  };
+  } catch (err) {
+    console.error("사용자 권한 확인 실패:", err.message);
+  }
+};
 
   // 일기 리스트 및 전체 개수 동기화 로드 함수
   const loadData = async () => {

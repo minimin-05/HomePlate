@@ -13,7 +13,6 @@ export default function AdminView({ isOpen, onClose }) {
     setUsers(data);
   };
 
-  // useEffect 내부에서 비동기 격리 처리를 하여 연쇄 렌더링을 방지
   useEffect(() => {
     if (isOpen) {
       (async () => {
@@ -37,7 +36,7 @@ export default function AdminView({ isOpen, onClose }) {
     }
   };
 
-  // 2. 외부 스포츠 API 데이터를 가져와 DB에 강제 저장하는 함수
+  // 2. 외부 스포츠 API 데이터를 가져와 DB에 저장
   const handleFetchAndSaveSportsAPI = async () => {
     try {
       const mockKboData = await gameDataService.checkDB(targetDate);
@@ -53,9 +52,9 @@ export default function AdminView({ isOpen, onClose }) {
     <div className="modal-overlay">
       <div className="admin-modal-container">
         
-        {/* 👑 모달 상단 타이틀 구역 */}
+        {/* 모달 상단 타이틀 구역 */}
         <div className="admin-modal-header">
-          <h2 className="admin-modal-title">👑 관리자 마스터 패널</h2>
+          <h2 className="admin-modal-title">관리</h2>
           <button className="admin-modal-close" onClick={onClose}>&times;</button>
         </div>
         <hr style={{ margin: '0 0 25px 0', borderColor: '#eaeaea' }} />
@@ -81,7 +80,7 @@ export default function AdminView({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* 👥 섹션 2: 회원 리스트 카드 */}
+        {/* 👥 섹션 2: 회원 리스트 */}
         <div className="admin-card-section user-list-section">
           <h3 className="admin-section-title">
             <span>👥</span> 서비스 가입 사용자 관리 <span style={{ color: '#007bff', fontWeight: 'bold' }}>({users.length}명)</span>

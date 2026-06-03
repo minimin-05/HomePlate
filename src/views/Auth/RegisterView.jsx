@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import '../../assets/Register.css'; // 분리한 회원가입 CSS 불러오기
+import '../../assets/Register.css';
 import { userController } from '../../controllers/userController';
 
 export default function RegisterView({ onViewChange }) {
-  // 설계 규격에 맞춘 변수명 id, pwd, pwdConfirm 그대로 유지
   const [id, setId] = useState('');
   const [pwd, setPwd] = useState('');
   const [pwdConfirm, setPwdConfirm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // 💡 [추가] 패스워드 및 확인창 각각의 개별 표시 상태 변수
+  // 패스워드 및 확인창 각각의 개별 표시 상태 변수
   const [showPwd, setShowPwd] = useState(false);
   const [showPwdConfirm, setShowPwdConfirm] = useState(false);
 
@@ -43,7 +42,7 @@ export default function RegisterView({ onViewChange }) {
             disabled={isLoading}
           />
 
-          {/* 💡 비밀번호 입력 섹션 */}
+          {/*  비밀번호 입력 섹션 */}
           <div className="register-password-wrapper">
             <input
               type={showPwd ? 'text' : 'password'}
@@ -63,7 +62,7 @@ export default function RegisterView({ onViewChange }) {
             </button>
           </div>
 
-          {/* 💡 비밀번호 확인 입력 섹션 */}
+          {/* 비밀번호 확인 입력 섹션 */}
           <div className="register-password-wrapper">
             <input
               type={showPwdConfirm ? 'text' : 'password'}

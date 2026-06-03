@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../../assets/Dashboard.css'; // 💡 기존 대시보드 스타일시트 활성화
+import '../../assets/Dashboard.css'; 
 import { diaryController } from '../../controllers/diaryController';
 import DiaryWriteView from './DiaryWriteView';
 import AdminView from './AdminView'; 
@@ -30,7 +30,7 @@ export default function MainDashboard({ onLogout }) {
     );
   };
 
-  // setTimeout(..., 0)을 사용하여 렌더링 사이클 직후 안전하게 권한 체크와 로드 동시 수행
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       loadData();
@@ -52,7 +52,6 @@ export default function MainDashboard({ onLogout }) {
 
   return (
     <div className="dashboard-container">
-      {/* 💡 [인라인 완벽 청소] Dashboard.css 클래스로 바인딩 변경 */}
       <header className="dashboard-header-flex">
         <h1 className="dashboard-header-title">HOME PLATE</h1>
         
@@ -61,7 +60,7 @@ export default function MainDashboard({ onLogout }) {
             onClick={() => setIsAdminOpen(true)} 
             className="admin-panel-trigger-btn"
           >
-            ⚙️ 관리자 마스터 패널
+            ⚙️ 관리자 패널
           </button>
         )}
       </header>

@@ -16,7 +16,6 @@ export default function DiaryWriteView({ isOpen, onClose, onRefresh, editData })
   // 사용자가 드롭다운에서 선택한 구단 이름을 담을 상태 변수 (기본값: 삼성)
   const [myTeamName, setMyTeamName] = useState('삼성');
 
-  // 💡 [해결] setTimeout(..., 0)을 사용해 동기적 상태 변경을 뒤로 미루어 연쇄 렌더링 에러를 완벽히 해결합니다.
   useEffect(() => {
     if (editData?.game_data) {
       const savedTeamName = editData.game_data.myTeam === 'team1' 
@@ -180,8 +179,6 @@ export default function DiaryWriteView({ isOpen, onClose, onRefresh, editData })
     <div className="modal-overlay">
       <div className="modal-container">
         <button className="modal-close-x" onClick={onClose}>&times;</button>
-
-        {/* ⚾ 폼 깨짐 버그를 해결한 가로형 전광판 디자인 구조 스케치 */}
         <div className="score-board-wrapper">
           <div className="team-score-box">
             
@@ -289,7 +286,7 @@ export default function DiaryWriteView({ isOpen, onClose, onRefresh, editData })
         <form onSubmit={handleSave} className="modal-main-form">
           <div className="middle-layout-grid">
             <div className="field-section">
-              <div className="section-title-left"><span className="icon">💎</span> 포지션 배치 ({gameData ? (myTeam === 'team1' ? gameData.team1_name : gameData.team2_name) : '선택팀'} 수비)</div>
+              <div className="section-title-left"><span className="icon">💎</span> 수비위치 ({gameData ? (myTeam === 'team1' ? gameData.team1_name : gameData.team2_name) : '선택팀'} 수비)</div>
               <div className="green-field-box">
                 <div className="baseball-ground-vector">
                   {currentDefense && (
@@ -367,7 +364,7 @@ export default function DiaryWriteView({ isOpen, onClose, onRefresh, editData })
           <div className="bottom-layout-grid">
             <div className="bottom-left-column">
               <div className="form-input-group">
-                <div className="section-title-left"><span className="icon">✪</span> 오늘자의 MVP</div>
+                <div className="section-title-left"><span className="icon">✪</span> MVP</div>
                 <input type="text" placeholder="MVP 선수의 이름을 입력하세요" value={mvp} onChange={(e) => setMvp(e.target.value)} className="mvp-text-input" />
                 <p className="input-guide-sub">오늘의 가장 빛나는 선수를 기록하세요.</p>
               </div>

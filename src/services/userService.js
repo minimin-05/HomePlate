@@ -2,9 +2,8 @@ import { supabase } from './supabaseClient'; // SupabaseManager
 
 export const userService = {
   
-  // 💡 [관리자 전용] 전체 사용자 리스트
+  //  전체 사용자 리스트
   async getAllUsers() {
-    // auth.users 테이블은 일반 select가 막혀있으므로 profiles 테이블을 통해 유저 리스트를 확보합니다.
     const { data, error } = await supabase
       .from('profiles')
       .select('*');

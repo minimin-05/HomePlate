@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../assets/Login.css'; // 분리한 CSS 파일 불러오기
+import '../../assets/Login.css';
 import { userController } from '../../controllers/userController';
 
 export default function LoginView({ onLoginSuccess, onViewChange }) {
@@ -7,7 +7,7 @@ export default function LoginView({ onLoginSuccess, onViewChange }) {
   const [pwd, setPwd] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  // 💡 [추가] 비밀번호 보임/숨김 제어 상태 변수
+  //  비밀번호 보임/숨김 제어 상태 변수
   const [showPwd, setShowPwd] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -23,7 +23,6 @@ export default function LoginView({ onLoginSuccess, onViewChange }) {
   return (
     <div className="login-container">
       <div className="login-wrapper">
-        {/* 루트 폴더의 images/에서 직접 이미지를 매핑 (설정형 방식 적용) */}
         <img src="/images/HomePlate.png" alt="Home Plate Logo" className="login-logo" />
 
         {/* 로그인 폼 */}
@@ -37,7 +36,6 @@ export default function LoginView({ onLoginSuccess, onViewChange }) {
             disabled={isLoading}
           />
 
-          {/* 💡 [구조 변경] 눈 모양 버튼 배치를 위해 컨테이너로 감싸기 */}
           <div className="password-input-container">
             <input
               type={showPwd ? 'text' : 'password'}

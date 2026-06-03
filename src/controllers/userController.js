@@ -1,6 +1,5 @@
 import { userService } from '../services/userService';
 
-// 1. 앞에 export를 확실하게 붙여서 선언해줘
 export const userController = {
   // 회원가입 폼 제출 처리 (handleRegister)
   async handleRegister(id, pwd, pwdConfirm) {

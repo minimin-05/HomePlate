@@ -51,7 +51,7 @@ const generateSingleMatch = (t1, t2, date) => {
 };
 
 export const gameDataService = {
-  // 💡 동적 응원팀(userTeam) 인자를 수용하여 처리합니다.
+
   async checkDB(date, userTeam = "삼성") {
     try {
       const { data, error } = await supabase
@@ -67,7 +67,8 @@ export const gameDataService = {
         return targetMatch || allMatches[0]; 
       }
 
-      // 2. 💡 [기획 수정] DB에 데이터가 없으면 임의로 자동 인서트하지 않고, "없다"고 판정하기 위해 과감하게 null 반환!
+      // 2. DB에는 해당 날짜의 경기 일정이 등록되어 있지 않은 경우
+
       console.log(`[안내] ${date} 자의 경기 기록이 DB에 등록되어 있지 않습니다.`);
       return null;
 
@@ -77,10 +78,7 @@ export const gameDataService = {
     }
   },
 
-  /**
-   * 🛠️ [추가] 관리자 패널 전용 5경기 수동 수집 및 강제 생성 메소드
-   * 나중에 관리자 페이지 버튼 액션에서 gameDataService.generateAndSaveDailyMatches(date) 형태로 호출하면 돼!
-   */
+
   async generateAndSaveDailyMatches(date) {
     try {
       let teams = Object.keys(TEAM_PLAYERS);

@@ -38,15 +38,19 @@ export default function AdminView({ isOpen, onClose }) {
 
   // 2. 외부 스포츠 API 데이터를 가져와 DB에 저장
   const handleFetchAndSaveSportsAPI = async () => {
-    try {
-      const mockKboData = await gameDataService.checkDB(targetDate);
-      if (mockKboData) {
-        alert(`[API 성공] ${targetDate} KBO 경기 데이터 원격 수집 및 데이터베이스(game_records) 동기화 완료!`);
-      }
-    } catch (error) {
-      alert('스포츠 API 로드 실패: ' + error.message);
+  try {
+    // 💡 checkDB(단순 조회) 대신, 실시간 수동 생성/인서트 엔진 메소드를 호출하도록 정밀 수리!
+    const success = await gameDataService.generateAndSaveDailyMatches(targetDate);
+    
+    if (success) {
+      alert(`[API 성공] ${targetDate} KBO 경기 데이터 5경기 원격 수집 및 데이터베이스(game_records) 동기화 완료!`);
+    } else {
+      alert('해당 날짜의 경기 데이터를 생성하지 못했거나 이미 등록되어 있습니다.');
     }
-  };
+  } catch (error) {
+    alert('스포츠 API 로드 실패: ' + error.message);
+  }
+};
 
   return (
     <div className="modal-overlay">

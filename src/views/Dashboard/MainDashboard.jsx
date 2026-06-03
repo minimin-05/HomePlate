@@ -15,7 +15,7 @@ export default function MainDashboard({ onLogout }) {
 
 // profiles 테이블의 실시간 데이터를 조회
 const checkUser = async () => {
-  // 1. 현재 로그인한 유저의 기본 auth 정보(id)를 가져옵니다.
+  // 1. 현재 로그인한 유저의 기본 auth 정보(id)를 가져옴
   const { data: { user } } = await supabase.auth.getUser();
   
   if (!user) return; // 로그인 세션이 없으면 튕겨내기
@@ -26,13 +26,12 @@ const checkUser = async () => {
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single(); // 데이터 1줄만 쏙 뽑아오기
+      .maybeSingle();
 
     if (error) throw error;
 
-    console.log("🔥 현재 로그인한 유저의 진짜 역할:", profileData?.role); 
+    console.log("🔥 현재 로그인한 유저의 역할:", profileData?.role); 
 
-    // 3. 역할이 정확히 admin인지 판별해서 마스터 키 부여!
     if (profileData?.role === 'admin') {
       setIsAdmin(true); 
     } else {

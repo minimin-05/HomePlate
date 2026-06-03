@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="./public/images/HomePlate.png" width="80%">
+<img src="../public/images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628
@@ -33,13 +33,13 @@
 
 ## 2. Class Diagram
 
-<img src="./public/images/ClassDiagram.jpg" width="100%">
+<img src="../public/images/ClassDiagram.jpg" width="100%">
 
 <br></br>
 
 아래의 표는 Class Diagram에서 표현한 Class들에 대한 설명이다.
 
-| Class Name | Explanation |
+| Class Name | Explanation |s
 |-----|-----|
 | UserController |사용자의 회원 가입, 로그인, 로그아웃 입력 이벤트를 처리하는 클래스. 관리자 계정으로 접속 시 등록된 전체 회원 목록을 화면에 출력하는 요청을 제어한다. <br><br> + handleLoginSubmit() : 사용자가 로그인 버튼을 클릭했을 때 작동한다. 입력된 아이디와 비밀번호 값을 읽어와 UserService.login() 메서드로 전달한다. <br> + handleRegister(): 회원가입 폼 제출 시 작동한다. 입력된 정보의 유효성을 검사한 후 UserService.signUp()을 호출한다. <br> + handleLogout() : 로그아웃 버튼 클릭 시 작동한다. UserService.signOut()을 호출한 뒤 로그인 화면으로 화면을 전환한다. <br> + showUserList() : 관리자가 '회원관리' 메뉴에 진입했을 때 작동한다. UserService.showAllUsers()가 반환한 데이터를 표 형태로 화면에 보여준다. <br> + handleCollectGameData() : 관리자가 '경기 정보 불러오기' 버튼을 클릭했을 때 작동한다. GameDataService 클래스의 fecthAPI() 메서드를 통해 경기 정보를 불러오도록 한다. 
 | DiaryController |사용자가 작성한 일기 목록을 메인 화면에 출력하고, 새로운 일기 작성 및 삭제 이벤트를 처리한다. <br><br> + showMainBoard() : 메인 화면 로드 시 작동한다. DiaryService.fetchDiary()를 호출해 사용자 본인의 일기 목록을 가져와 액자형 UI로 보여준다. <br> + handleSaveDiary(): 일기 작성 폼에서 '저장' 클릭 시 작동한다. 작성된 텍스트와 첨부된 사진 파일을 DiaryService.createDiary()로 전달한다. <br> + handleDeleteDiary() : '삭제' 버튼 클릭 시 작동하며, 확인 창을 띄운 후 DiaryService.removeDiary()를 호출한다. <br> + loadGameDataTemplate() : '경기 기록 불러오기' 버튼 클릭 시 작동한다. 날짜 정보를 바탕으로 GameDataService를 호출하여 얻은 라인업/스코어 데이터를 야구장 필드 이미지 UI 위의 지정된 좌표에 텍스트로 배치한다.  |
@@ -58,7 +58,7 @@
 
 아래 나오는 그림들은 Conceptualization에서 표현한 기능들을 Sequence Diagram으로 표현한 그림들이다. 
 
-<img src="./public/images/sequenceDiagram/seq1.jpg">
+<img src="../public/images/sequenceDiagram/seq1.jpg">
 
 <br>
 
@@ -66,7 +66,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq2.jpg">
+<img src="../public/images/sequenceDiagram/seq2.jpg">
 
 <br>
 
@@ -74,7 +74,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq3.jpg">
+<img src="../public/images/sequenceDiagram/seq3.jpg">
 
 <br>
 
@@ -83,7 +83,7 @@
 <br>
 
 
-<img src="./public/images/sequenceDiagram/seq4.jpg">
+<img src="../public/images/sequenceDiagram/seq4.jpg">
 
 <br>
 
@@ -91,7 +91,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq5.jpg">
+<img src="../public/images/sequenceDiagram/seq5.jpg">
 
 <br>
 
@@ -100,7 +100,7 @@
 <br>
 
 
-<img src="./public/images/sequenceDiagram/seq6.jpg">
+<img src="../public/images/sequenceDiagram/seq6.jpg">
 
 <br>
 
@@ -108,7 +108,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq7.jpg">
+<img src="../public/images/sequenceDiagram/seq7.jpg">
 
 <br>
 
@@ -116,7 +116,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq8.jpg">
+<img src="../public/images/sequenceDiagram/seq8.jpg">
 
 <br>
 
@@ -124,7 +124,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq9.jpg">
+<img src="../public/images/sequenceDiagram/seq9.jpg">
 
 <br>
 
@@ -132,7 +132,7 @@
 
 <br>
 
-<img src="./public/images/sequenceDiagram/seq10.jpg">
+<img src="../public/images/sequenceDiagram/seq10.jpg">
 
 <br>
 
@@ -145,7 +145,7 @@
 
 ## 4. State machine diagram
 
-<img src="./public/images/stateMachineDiagram.jpg">
+<img src="../public/images/stateMachineDiagram.jpg">
 
 크게는 비로그인(LoggedOut) 상태와 로그인(LoggedIn) 상태라는 두 개의 복합 상태로 나뉘어 진다.
 

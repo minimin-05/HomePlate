@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="./public/images/HomePlate.png" width="80%">
+<img src="../public/images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628
@@ -34,7 +34,7 @@
 
 ## 2. System context diagram
 
-<img src="./public/images/SystemContextDiagram.jpg" width="90%">
+<img src="../public/images/SystemContextDiagram.jpg" width="90%">
 
 
 - - -

@@ -14,6 +14,7 @@ export default function MainDashboard({ onLogout }) {
   const [isAdminOpen, setIsAdminOpen] = useState(false); 
 
 // profiles 테이블의 실시간 데이터를 조회
+// profiles 테이블의 실시간 데이터를 조회
 const checkUser = async () => {
   // 1. 현재 로그인한 유저의 기본 auth 정보(id)를 가져옴
   const { data: { user } } = await supabase.auth.getUser();
@@ -30,9 +31,14 @@ const checkUser = async () => {
 
     if (error) throw error;
 
-    console.log("🔥 현재 로그인한 유저의 역할:", profileData?.role); 
+    // 💡 [핵심 방어막] 백엔드에서 role을 못 가져오거나(null) 늦어지면 강제로 'user'를 먹입니다.
+    const userRole = profileData?.role || 'user'; 
 
-    if (profileData?.role === 'admin') {
+    // ❌ 기존 profileData?.role 대신, 방어막을 거친 userRole 변수를 찍어줘야 합니다!
+    console.log("🔥 현재 로그인한 유저의 역할:", userRole); 
+
+    // 3. 역할이 정확히 admin인지 판별해서 마스터 키 부여!
+    if (userRole === 'admin') {
       setIsAdmin(true); 
     } else {
       setIsAdmin(false);

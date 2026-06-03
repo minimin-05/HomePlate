@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="./images/HomePlate.png" width="80%">
+<img src="./public/images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628
@@ -33,7 +33,7 @@
 
 ## 2. Class Diagram
 
-<img src="./images/ClassDiagram.jpg" width="100%">
+<img src="./public/images/ClassDiagram.jpg" width="100%">
 
 <br></br>
 
@@ -58,7 +58,7 @@
 
 아래 나오는 그림들은 Conceptualization에서 표현한 기능들을 Sequence Diagram으로 표현한 그림들이다. 
 
-<img src="./images/sequenceDiagram/seq1.jpg">
+<img src="./public/images/sequenceDiagram/seq1.jpg">
 
 <br>
 
@@ -66,7 +66,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq2.jpg">
+<img src="./public/images/sequenceDiagram/seq2.jpg">
 
 <br>
 
@@ -74,7 +74,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq3.jpg">
+<img src="./public/images/sequenceDiagram/seq3.jpg">
 
 <br>
 
@@ -83,7 +83,7 @@
 <br>
 
 
-<img src="./images/sequenceDiagram/seq4.jpg">
+<img src="./public/images/sequenceDiagram/seq4.jpg">
 
 <br>
 
@@ -91,7 +91,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq5.jpg">
+<img src="./public/images/sequenceDiagram/seq5.jpg">
 
 <br>
 
@@ -100,7 +100,7 @@
 <br>
 
 
-<img src="./images/sequenceDiagram/seq6.jpg">
+<img src="./public/images/sequenceDiagram/seq6.jpg">
 
 <br>
 
@@ -108,7 +108,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq7.jpg">
+<img src="./public/images/sequenceDiagram/seq7.jpg">
 
 <br>
 
@@ -116,7 +116,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq8.jpg">
+<img src="./public/images/sequenceDiagram/seq8.jpg">
 
 <br>
 
@@ -124,7 +124,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq9.jpg">
+<img src="./public/images/sequenceDiagram/seq9.jpg">
 
 <br>
 
@@ -132,7 +132,7 @@
 
 <br>
 
-<img src="./images/sequenceDiagram/seq10.jpg">
+<img src="./public/images/sequenceDiagram/seq10.jpg">
 
 <br>
 
@@ -145,7 +145,7 @@
 
 ## 4. State machine diagram
 
-<img src="./images/stateMachineDiagram.jpg">
+<img src="./public/images/stateMachineDiagram.jpg">
 
 크게는 비로그인(LoggedOut) 상태와 로그인(LoggedIn) 상태라는 두 개의 복합 상태로 나뉘어 진다.
 

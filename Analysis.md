@@ -1,6 +1,6 @@
 # Home Plate
 
-<img src="./images/HomePlate.png" width="80%">
+<img src="./public/images/HomePlate.png" width="80%">
 
 
 ###### NO. 22421628
@@ -32,7 +32,7 @@
 
 1) Use Case Diagram
 
-<img src="./images/UseCaseDiagram.png" width="90%">
+<img src="./public/images/UseCaseDiagram.png" width="90%">
 
 
 <br></br>
@@ -1387,7 +1387,7 @@ Diary 클래스에 저장된 해당 기록을 DB에서 제거한다.
 1) 시작 화면
 
 
-<img src="./images/start.png" width="90%">
+<img src="./public/images/start.png" width="90%">
 
 
 - 시스템이 시작하면 로그인 화면이 제일 먼저 뜨게 된다.
@@ -1397,7 +1397,7 @@ Diary 클래스에 저장된 해당 기록을 DB에서 제거한다.
 2) 회원 가입 화면
 
 
-<img src="./images/Registration.png" width="90%">
+<img src="./public/images/Registration.png" width="90%">
 
 - 회원가입 버튼을 누르면 뜨는 화면
 - 닉네임과 아이디, 비밀번호를 기입하고 회원가입을 진행한다
@@ -1407,7 +1407,7 @@ Diary 클래스에 저장된 해당 기록을 DB에서 제거한다.
 3) 메인 화면
 
 
-<img src="./images/main.png" width="90%">
+<img src="./public/images/main.png" width="90%">
 
 
 - 로그인 성공 시 뜨는 개인 사용자 계정 화면
@@ -1418,7 +1418,7 @@ Diary 클래스에 저장된 해당 기록을 DB에서 제거한다.
 4) 일기 작성 및 조회 화면
 
 
-<img src="./images/DiaryWrite.png" width="90%">
+<img src="./public/images/DiaryWrite.png" width="90%">
 
 
 - 일기 작성 버튼을 누르면 뜨는 일기 작성 템플릿 화면

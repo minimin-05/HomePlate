@@ -33,7 +33,6 @@ export const diaryService = {
       const { data: { user }, error: userError } = await supabase.auth.getUser();
       if (userError || !user) throw new Error("유저 인증 세션이 만료되었습니다.");
 
-      console.log("🚀 [인서트 시스템] 현재 작성자의 실제 UID 주입 실행:", user.id);
 
       const { data, error } = await supabase
         .from('diaries')

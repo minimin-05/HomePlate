@@ -52,9 +52,6 @@ export const userService = {
       password: pwd,
     });
 
-    console.log("★ [서비스] 서버로 보내는 ID:", id);
-    console.log("★ [서비스] 서버로 보내는 PWD:", pwd);
-
     if (error) {
       console.error('로그인 실패:', error.message);
       return false;

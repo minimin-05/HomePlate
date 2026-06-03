@@ -1,16 +1,21 @@
-# React + Vite
+# ⚾ Home Plate
+> **KBO 경기 데이터 연동 야구 직관 일기장 웹 서비스**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🧑‍💻 개발자 정보
+* **학번:** 22421628
+* **이름:** 장세민
+* **이메일:** 22421628@yu.ac.kr
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 핵심 기능
+1. **로그인/회원가입:** Supabase Auth 기반 유저 인증
+2. **야구 일기 작성:** 당일 KBO 경기 라인업 및 스코어 자동 로드 및 사진 첨부
+3. **관리자 패널:** 특정 날짜 경기 데이터 외부 API 수집 및 사용자 관리
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ 기술 스택
+* **Frontend:** React, Vite
+* **Backend:** Supabase (Database, Storage)
+* **Deployment:** Vercel (https://home-plate-mu.vercel.app/)

@@ -1,0 +1,123 @@
+/* 회원가입 페이지 전체 컨테이너 */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #FDFBF0; /* 크림색 배경 통일 */
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+}
+
+/* 중앙 정렬 wrapper */
+.register-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+}
+
+/* 상단 타이틀 */
+.register-title {
+  font-size: 24px;
+  color: #1C3F2F; /* 딥그린 */
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+/* 회원가입 폼 */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 입력 필드 */
+.register-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.register-input:focus {
+  border-color: #1C3F2F;
+}
+
+.register-input::placeholder {
+  color: #9CA3AF;
+}
+
+/* 💡 [신규 추가] 비밀번호 입력 및 아이콘 정렬 wrapper */
+.register-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* 아이콘과 패딩 겹침 방지 여백 설정 */
+.register-password-wrapper .register-input {
+  padding-right: 46px;
+}
+
+/* 회원가입 폼용 전용 토글 버튼 */
+.register-password-toggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #9CA3AF;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.register-password-toggle:hover {
+  color: #1C3F2F;
+}
+
+/* 가입하기 버튼 */
+.register-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #1C3F2F; /* 딥그린 반영 */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s;
+}
+
+.register-submit-btn:hover {
+  background-color: #143023;
+}
+
+/* 하단 돌아가기 영역 */
+.register-footer {
+  margin-top: 24px;
+}
+
+.back-link-btn {
+  background: none;
+  border: none;
+  color: #6B7280;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}

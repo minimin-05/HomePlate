@@ -1,0 +1,512 @@
+/* 팝업 뒷배경 어둡게 처리 */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 팝업 메인 컨테이너 */
+.modal-container {
+  background-color: #E2E3D3; 
+  width: 100%;
+  max-width: 960px; 
+  height: 90vh;
+  overflow-y: auto; 
+  border-radius: 20px;
+  border: 2px solid #1C3F2F;
+  position: relative;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* 우측 상단 닫기 X 버튼 */
+.modal-close-x {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none; border: none;
+  font-size: 32px; color: #111827;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* 1. 상단 전광판 스코어 보드 */
+.score-board-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.team-score-box {
+  background-color: #0B291B; 
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  color: #FFFFFF;
+  gap: 16px;
+  flex-wrap: wrap; /* 모바일 초소형 화면 대응 */
+}
+
+/* 팀명과 점수를 가로 정렬하기 위한 셀 배치 */
+.board-team-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 전광판 전용 팀 이름 인풋 필드 */
+.board-team-input {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 800;
+  width: 110px;
+  outline: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.board-team-input.text-right { text-align: right; }
+.board-team-input.text-left { text-align: left; }
+
+.board-team-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 전광판 전용 큼직한 스코어 숫자 박스 */
+.board-score-input {
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 800;
+  width: 55px;
+  text-align: center;
+  padding: 3px 0;
+  outline: none;
+}
+
+/* 스코어보드 화살표 가리기 */
+.board-score-input::-webkit-outer-spin-button,
+.board-score-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.team-label {
+  font-size: 13px;
+  color: #A3AED0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.team-score-num {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* 전광판 구분선 정렬 고정 */
+.score-divider {
+  font-size: 24px;
+  font-weight: 800;
+  color: #A3AED0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. 날짜 제어 및 데이터 로드 바 */
+.date-control-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap; /* 모바일에서 찌그러지면 아래로 툭 떨어지게 분격 방지 */
+}
+
+.date-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.write-date-input {
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  outline: none;
+  border-bottom: 2px solid #1C3F2F;
+}
+
+/* 응원팀 드롭다운 */
+.my-team-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.team-select-dropdown {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #1C3F2F;
+  background-color: #F7F6ED;
+  font-weight: 600;
+  outline: none;
+}
+
+.game-fetch-btn {
+  background-color: #0B291B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 타이틀 칼정렬 왼쪽 정렬 전용 CSS 속성 통합 */
+.section-title-left {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+  text-align: left;
+  width: 100%;
+}
+
+/* 중간 레이아웃 (그라운드 vs 라인업 2분할) */
+.middle-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+/* 🟢 야구장 필드 전체를 감싸는 초록색 베이스 박스 */
+.field-section .green-field-box {
+  background-color: #0E5A36;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* 🟢 sport.png가 배경으로 들어가는 실제 다이아몬드 판 */
+.baseball-ground-vector {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  background-image: url('/images/sport.png');
+  background-size: contain;    
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.field-placeholder-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #C5C6B6;
+}
+
+/* 🎯 투명도를 조절한 가로형 선수 이름표 */
+.player-marker {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(2px); 
+  padding: 4px 6px;            
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #111827;
+  border: 1px solid rgba(28, 63, 47, 0.4); 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transform: translate(-50%, -50%); 
+  white-space: nowrap;         
+  min-width: 60px;             
+  justify-content: center;
+}
+
+.pos-label {
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 800;
+  background-color: #1C3F2F; 
+  padding: 1px 3px;
+  border-radius: 3px;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* 정밀 수비 좌표계 */
+.pos-p  { top: 52%; left: 50%; }  
+.pos-c  { top: 76%; left: 50%; }  
+.pos-1b { top: 52%; left: 74%; }  
+.pos-2b { top: 34%; left: 65%; }  
+.pos-ss { top: 34%; left: 35%; }  
+.pos-3b { top: 52%; left: 26%; }  
+.pos-lf { top: 24%; left: 18%; }  
+.pos-cf { top: 12%; left: 50%; }  
+.pos-rf { top: 24%; left: 82%; }  
+
+/* 우측 라인업 리스트 테이블 스타일 */
+.lineup-tables-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.team-lineup-table {
+  background-color: #F7F6ED;
+  border-radius: 12px;
+  border: 1px solid #C5C6B6;
+  padding: 16px 12px;
+}
+
+.table-team-header {
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: #111827;
+  border-bottom: 1px solid #D1D5DB;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.lineup-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lineup-row-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.position-num-badge { color: #DC2626; font-weight: bold; width: 16px; text-align: center; }
+.position-num-badge-t2 { color: #4B5563; font-weight: bold; width: 16px; text-align: center; }
+.player-name-text { color: #4B5563; font-weight: 500; }
+
+.form-divider-line { 
+  border: 0; 
+  height: 1px; 
+  background-color: #C5C6B6; 
+  margin: 24px 0; 
+}
+
+/* 하단 레이아웃 (MVP/사진 vs 메모장 2분할) */
+.bottom-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px;
+}
+
+.bottom-left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 20px;
+}
+
+.form-input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mvp-text-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #C5C6B6;
+  border-radius: 10px;
+  background-color: #F7F6ED;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-guide-sub { font-size: 11px; color: #71717A; margin: 4px 0 0 4px; text-align: left; }
+
+.photo-upload-dashed-box {
+  width: 130px; height: 110px;
+  border: 2px dashed #A1A1AA;
+  background-color: #F7F6ED;
+  border-radius: 12px;
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer; box-sizing: border-box;
+}
+
+.plus-icon-lg { font-size: 28px; color: #A1A1AA; }
+
+/* 오른쪽 대형 메모장 텍스트 영역 */
+.memo-textarea-box {
+  width: 100%; height: 200px;
+  background-color: #F7F6ED; border: 1px solid #C5C6B6; border-radius: 14px;
+  padding: 18px; font-size: 14px; line-height: 1.6; outline: none; resize: none; box-sizing: border-box;
+  text-align: left;
+}
+
+/* 하단 최종 일기장 저장 버튼 */
+.submit-action-row { display: flex; justify-content: flex-end; margin-top: 28px; }
+.final-diary-save-btn {
+  background-color: #1C3F2F; color: #FFFFFF; border: none; border-radius: 24px;
+  padding: 12px 32px; font-size: 14px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(28, 63, 47, 0.2);
+}
+
+/* 3장 멀티 이미지 썸네일 개별 취소 단추 */
+.photo-delete-badge-btn {
+  position: absolute;
+  top: 4px; right: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  width: 20px; height: 20px;
+  font-size: 14px;
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.photo-delete-badge-btn:hover {
+  background-color: rgba(220, 38, 38, 0.9); 
+}
+
+/* 수비 위치 그라운드 내 인라인 입력 필드 */
+.inline-edit-player-input {
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+  width: 42px;
+  text-align: center;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 라인업 리스트 내 인라인 입력 필드 */
+.inline-edit-lineup-input {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B5563;
+  width: 100%;
+  outline: none;
+  padding: 2px 4px;
+}
+
+.inline-edit-lineup-input:focus {
+  background-color: #FFFFFF;
+  border: 1px solid #1C3F2F;
+  border-radius: 6px;
+  color: #111827;
+}
+
+.final-diary-delete-btn {
+  background-color: #F43F5E; 
+  color: #FFFFFF;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+}
+
+
+/* =========================================================
+   📱 대형 변경의 핵심: 모바일 스마트폰 타겟 반응형 미디어 쿼리 (768px 이하)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+  /* 모바일에서는 모달을 화면 전체에 꽉 채워서 넓게 쓰기 */
+  .modal-container {
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    padding: 20px 16px;
+  }
+  
+  .modal-close-x {
+    top: 14px; right: 16px;
+    font-size: 28px;
+  }
+
+  /* 전광판 인풋 크기 조절하여 한 줄 유지 */
+  .board-team-input {
+    width: 75px;
+    font-size: 16px;
+  }
+  .board-score-input {
+    width: 45px;
+    font-size: 18px;
+  }
+  .score-divider {
+    margin: 0 4px;
+  }
+
+  /* 💡 [대형 핵심 변환 1] 그라운드판과 라인업을 세로 1줄로 재배치 */
+  .middle-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* 💡 [대형 핵심 변환 2] 라인업 테이블 팀1, 팀2도 세로로 층층이 쌓기 */
+  .lineup-tables-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 💡 [대형 핵심 변환 3] 하단 MVP/사진과 메모장 영역도 세로 일렬 배치 */
+  .bottom-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .memo-textarea-box {
+    height: 160px; /* 모바일에서 텍스트 창 너무 길지 않게 축소 */
+  }
+
+  /* 하단 저장/삭제 행을 양쪽 끝 정렬 유지 */
+  .submit-action-row {
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .final-diary-save-btn, .final-diary-delete-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
